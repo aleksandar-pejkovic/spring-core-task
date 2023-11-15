@@ -21,4 +21,20 @@ public class TraineeDAO {
     public Trainee findById(long id) {
         return traineeMap.get(id);
     }
+
+    public void update(Trainee trainee) {
+        // Implement update logic if needed
+        traineeMap.put(trainee.getId(), trainee);
+    }
+
+    public void delete(long id) {
+        // Implement delete logic if needed
+        traineeMap.remove(id);
+    }
+
+    public Map<Long, Trainee> getAllTrainees() {
+        return new HashMap<>(traineeMap);
+    }
+
+    // Add other methods as needed
 }
