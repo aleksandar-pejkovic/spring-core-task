@@ -13,7 +13,7 @@ public class Trainer {
 
     private Long id;
 
-    private TrainingType specialization;
+    private Long specialization;
 
-    private User user;
+    private Long userId;
 }

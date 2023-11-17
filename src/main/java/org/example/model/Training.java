@@ -15,13 +15,13 @@ public class Training {
 
     private Long id;
 
-    private Trainee trainee;
+    private Long traineeId;
 
-    private Trainer trainer;
+    private Long trainerId;
 
     private String trainingName;
 
-    private TrainingType trainingType;
+    private Long trainingTypeId;
 
     private Date trainingDate;
 

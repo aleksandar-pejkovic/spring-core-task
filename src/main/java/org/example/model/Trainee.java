@@ -19,5 +19,5 @@ public class Trainee {
 
     private String address;
 
-    private User user;
+    private Long userId;
 }
