@@ -1,6 +1,9 @@
 package org.example.service;
 
+import java.util.Map;
+
 import org.example.dao.TrainerDAO;
+import org.example.model.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +15,25 @@ public class TrainerService {
     @Autowired
     public TrainerService(TrainerDAO trainerDAO) {
         this.trainerDAO = trainerDAO;
+    }
+
+    public void createTrainer(Trainer trainer) {
+        trainerDAO.save(trainer);
+    }
+
+    public Trainer getTrainerById(long id) {
+        return trainerDAO.findById(id);
+    }
+
+    public void updateTrainer(Trainer trainer) {
+        trainerDAO.update(trainer);
+    }
+
+    public void deleteTrainer(long id) {
+        trainerDAO.delete(id);
+    }
+
+    public Map<Long, Trainer> getAllTrainers() {
+        return trainerDAO.getAllTrainers();
     }
 }
