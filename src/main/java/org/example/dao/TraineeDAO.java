@@ -35,6 +35,4 @@ public class TraineeDAO {
     public Map<Long, Trainee> getAllTrainees() {
         return new HashMap<>(traineeMap);
     }
-
-    // Add other methods as needed
 }
