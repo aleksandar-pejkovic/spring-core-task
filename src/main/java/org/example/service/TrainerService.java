@@ -1,5 +1,6 @@
 package org.example.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.example.dao.TrainerDAO;
@@ -33,7 +34,7 @@ public class TrainerService {
         trainerDAO.delete(id);
     }
 
-    public Map<Long, Trainer> getAllTrainers() {
+    public List<Trainer> getAllTrainers() {
         return trainerDAO.getAllTrainers();
     }
 }

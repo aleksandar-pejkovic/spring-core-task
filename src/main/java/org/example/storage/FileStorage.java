@@ -7,20 +7,24 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import lombok.Getter;
+
 @Component
 public class FileStorage implements Storage {
 
+    @Getter
     private final Map<String, List<?>> entityData = new HashMap<>();
 
-    @Autowired
-    private Data data;
+    private final Data data;
 
     @Override
     public Map<String, List<?>> getAllData() {
         return new HashMap<>(entityData);
     }
 
-    public FileStorage() {
+    @Autowired
+    public FileStorage(Data data) {
+        this.data = data;
         initData();
     }
 

@@ -30,8 +30,8 @@ public class Data {
 
     private void initDummyData() {
         // Dummy Trainee entities
-        trainees.add(new Trainee(1L, new Date(1990, Calendar.MAY, 12), "123 Main St", 1L));
-        trainees.add(new Trainee(2L, new Date(1992, Calendar.FEBRUARY, 15), "456 Oak St", 2L));
+        trainees.add(new Trainee(1L, new Date(1990 - 1900, Calendar.MAY, 12), "123 Main St", 1L));
+        trainees.add(new Trainee(2L, new Date(1992 - 1900, Calendar.FEBRUARY, 15), "456 Oak St", 2L));
 
         // Dummy Trainer entities
         trainers.add(new Trainer(1L, 1L, 1L));
