@@ -21,9 +21,10 @@ public class TraineeService {
         this.traineeDAO = traineeDAO;
     }
 
-    public void createTrainee(Trainee trainee) {
-        traineeDAO.save(trainee);
-        logger.info("Trainee created: {}", trainee);
+    public Trainee createTrainee(Trainee trainee) {
+        Trainee createdTrainee = traineeDAO.save(trainee);
+        logger.info("Trainee created: {}", createdTrainee);
+        return createdTrainee;
     }
 
     public Trainee getTraineeById(long id) {
@@ -32,9 +33,10 @@ public class TraineeService {
         return trainee;
     }
 
-    public void updateTrainee(Trainee trainee) {
-        traineeDAO.update(trainee);
+    public Trainee updateTrainee(Trainee trainee) {
+        Trainee updatedTrainee = traineeDAO.update(trainee);
         logger.info("Trainee updated: {}", trainee);
+        return updatedTrainee;
     }
 
     public void deleteTrainee(long id) {

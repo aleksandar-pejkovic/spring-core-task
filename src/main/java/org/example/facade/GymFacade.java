@@ -44,9 +44,9 @@ public class GymFacade {
         List<Training> trainings = trainingService.getAllTrainings();
     }
 
-    public void createTrainee(Trainee trainee) {
+    public Trainee createTrainee(Trainee trainee) {
         logger.info("Creating trainee...");
-        traineeService.createTrainee(trainee);
+        return traineeService.createTrainee(trainee);
     }
 
     public Trainee getTraineeById(Long traineeId) {
@@ -54,9 +54,9 @@ public class GymFacade {
         return traineeService.getTraineeById(traineeId);
     }
 
-    public void updateTrainee(Trainee trainee) {
+    public Trainee updateTrainee(Trainee trainee) {
         logger.info("Updating trainee...");
-        traineeService.updateTrainee(trainee);
+        return traineeService.updateTrainee(trainee);
     }
 
     public void deleteTrainee(Long traineeId) {

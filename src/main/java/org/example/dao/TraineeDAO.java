@@ -20,18 +20,17 @@ public class TraineeDAO {
 
     private final Map<Long, Trainee> traineeMap = new HashMap<>();
 
-    private static long idCounter = 1;
+    private static long idCounter = 3;
 
     @Autowired
     public TraineeDAO(FileStorage fileStorage) {
         this.fileStorage = fileStorage;
     }
 
-    public void save(Trainee trainee) {
+    public Trainee save(Trainee trainee) {
         long id = idCounter++;
         trainee.setId(id);
-        traineeMap.put(id, trainee);
-        logger.error("Error occurred while saving trainee: {}", trainee);
+        return traineeMap.put(id, trainee);
     }
 
     public Trainee findById(long id) {
@@ -42,13 +41,11 @@ public class TraineeDAO {
         return trainee;
     }
 
-    public void update(Trainee trainee) {
+    public Trainee update(Trainee trainee) {
         if (!traineeMap.containsKey(trainee.getId())) {
             logger.error("Trainee not found for update: {}", trainee);
-        } else {
-            traineeMap.put(trainee.getId(), trainee);
-            logger.error("Error occurred while updating trainee: {}", trainee);
         }
+        return traineeMap.put(trainee.getId(), trainee);
     }
 
     public void delete(long id) {
