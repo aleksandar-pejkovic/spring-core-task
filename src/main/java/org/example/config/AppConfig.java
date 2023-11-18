@@ -1,17 +1,17 @@
 package org.example.config;
 
-import org.example.storage.Data;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.example.dao.TraineeDAO;
 import org.example.dao.TrainerDAO;
 import org.example.dao.TrainingDAO;
+import org.example.facade.GymFacade;
 import org.example.service.TraineeService;
 import org.example.service.TrainerService;
 import org.example.service.TrainingService;
+import org.example.storage.Data;
 import org.example.storage.FileStorage;
-import org.example.facade.GymFacade;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = "org.example")
